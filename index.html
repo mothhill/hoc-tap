@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0A120E">
+<meta name="theme-color" content="#111A1F">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="icon-192.png">
@@ -830,6 +830,18 @@ button.fx-b{cursor:pointer}
 .pwa-the small{display:block;margin-top:4px;color:var(--muted);line-height:1.45}
 .pwa-nut{display:flex;gap:8px}
 .pwa-nut .btn{width:auto;padding:9px 14px}
+/* mod_zmau.css */
+/* Bảng màu Biển lặng (giống APP HABIT v14.11.104+). Tệp tên mod_zmau để ghép cuối cùng, đè các màu trước. */
+:root:not([data-theme=light]){--bg:#111A1F;--card:#1A252C;--card2:#22303A;--line:#2A3841;--ink:#E4ECEF;--muted:#9FB0B8;--primary:#5CC8B8;--primary-ink:#0B1A18;--primary-soft:color-mix(in srgb,#5CC8B8 14%,transparent);--gold:#F2A27C;--gold-soft:color-mix(in srgb,#F2A27C 16%,transparent);--peach:#EF6F6F;--peach-soft:color-mix(in srgb,#EF6F6F 14%,transparent);--edge:color-mix(in srgb,#5CC8B8 13%,transparent);--glow:color-mix(in srgb,#5CC8B8 7%,transparent)}
+:root[data-theme=light]{--bg:#F2F6F7;--card:#FFFFFF;--card2:#F2F6F7;--line:#DCE5E8;--ink:#16242B;--muted:#536671;--primary:#0E7C72;--primary-ink:#FFFFFF;--primary-soft:color-mix(in srgb,#0E7C72 9%,#fff);--gold:#B4532A;--gold-soft:color-mix(in srgb,#B4532A 12%,#fff);--peach:#C0392B;--peach-soft:color-mix(in srgb,#C0392B 10%,#fff);--mint:color-mix(in srgb,#0E7C72 80%,#000);--mint-soft:color-mix(in srgb,#0E7C72 9%,#fff);--edge:#DCE5E8;--glow:color-mix(in srgb,#0E7C72 6%,transparent)}
+.brand{background:linear-gradient(120deg,color-mix(in srgb,var(--primary) 30%,var(--card)) 0%,var(--card) 70%);border-color:var(--line);color:var(--ink)}
+.brand img,.themebtn{border-color:var(--line)}
+.themebtn{background:color-mix(in srgb,var(--card) 70%,transparent)}
+.brand .b2{color:var(--primary)}
+:root:not([data-theme=light]) .brand .bp{color:color-mix(in srgb,var(--primary) 70%,#fff);border-color:color-mix(in srgb,var(--primary) 40%,transparent);background:color-mix(in srgb,var(--bg) 45%,transparent)}
+:root[data-theme=light] .brand :is(.bp,.b2){color:color-mix(in srgb,var(--primary) 78%,#000)}
+:root[data-theme=light] .brand .bp{border-color:color-mix(in srgb,var(--primary) 40%,transparent);background:transparent}
+.over h2{color:var(--primary)}
 </style>
 </head>
 <body>
@@ -845,7 +857,7 @@ button.fx-b{cursor:pointer}
 <div id="over"></div>
 
 <script>
-var APP_VER_WEB = '0.7.1';
+var APP_VER_WEB = '0.7.2';
 var EXEC_ID = 'AKfycbxd_9MVJPgddeIOsrZuWnMEh4c5jivHlG9dOQPuKB33ALJjsYAbazqy8GdixzWCM6R7rQ';
 var S = { token: '', data: null, tab: 'toi', thang: '', xh: { loai: 'tuan', pham: 'lop' }, de: null };
 
@@ -1277,7 +1289,7 @@ function datNen(t) {
   document.documentElement.setAttribute('data-theme', t);
   try { localStorage.setItem('theme', t); } catch (e) { }
   $('themeBtn').textContent = t === 'light' ? '🌙' : '☀️';
-  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'light' ? '#EDF4EB' : '#0A120E');
+  var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute('content', t === 'light' ? '#F2F6F7' : '#111A1F');
 }
 function batDau() {
   HOOK('khoi_dong');
@@ -1434,7 +1446,7 @@ function fxSfx(n) {
 }
 
 /* ---------- Pháo hoa: giấy rơi + chùm tia ---------- */
-var FX_MAU = ['#B8F061', '#4FC98A', '#FF9F72', '#F5C444', '#FF6F91', '#7CC4FF', '#EEF4EC'];
+var FX_MAU = ['#5CC8B8', '#4FC98A', '#FF9F72', '#F5C444', '#FF6F91', '#7CC4FF', '#EEF4EC'];
 function fxCanvas() {
   if (FX.cv && FX.cv.parentNode) return FX.cv;
   var c = document.createElement('canvas'); c.className = 'fx-cv'; document.body.appendChild(c); FX.cv = c; return c;

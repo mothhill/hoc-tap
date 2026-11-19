@@ -1,7 +1,7 @@
 /* Service worker App Học Tập (theo mẫu APP HABIT v19.11.128).
    Trang chính luôn lấy bản mới từ mạng trước, bản đệm chỉ dùng khi mất mạng.
    Không đụng yêu cầu tới máy chủ Apps Script (khác nguồn). */
-const CACHE = 'hoctap-0-7-1';
+const CACHE = 'hoctap-0-7-2';
 const STATIC = ['icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'manifest.webmanifest'];
 
 self.addEventListener('install', e => {
