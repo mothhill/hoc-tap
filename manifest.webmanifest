@@ -3,8 +3,8 @@
  "short_name": "Học tập",
  "start_url": ".",
  "display": "standalone",
- "background_color": "#0F2A1F",
- "theme_color": "#0F2A1F",
+ "background_color": "#0A120E",
+ "theme_color": "#0A120E",
  "icons": [
   {
    "src": "icon-192.png",
